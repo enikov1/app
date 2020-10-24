@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="29" height="17" viewBox="0 0 29 17">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: gray;
+      }
+    </style>
+  </defs>
+  <g id="next" transform="translate(0.072)">
+    <path id="Многоугольник_10" data-name="Многоугольник 10" class="cls-1" d="M7.617,1.662a1,1,0,0,1,1.766,0L16.22,14.531A1,1,0,0,1,15.336,16H1.664A1,1,0,0,1,.78,14.531Z" transform="translate(15.928) rotate(90)"/>
+    <path id="Многоугольник_11" data-name="Многоугольник 11" class="cls-1" d="M7.617,1.662a1,1,0,0,1,1.766,0L16.22,14.531A1,1,0,0,1,15.336,16H1.664A1,1,0,0,1,.78,14.531Z" transform="translate(28.928) rotate(90)"/>
+  </g>
+</svg>

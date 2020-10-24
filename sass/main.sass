@@ -1,0 +1,1231 @@
+@import "vars"
+@import "libs"
+@import "reset"
+@import "fonts"
+
+
+html, body
+	height: 100%
+html
+	position: relative
+
+body
+	font-size: 16px
+	min-width: 320px
+	font-family: $default-font
+	color: $text
+
+img
+	max-width: 100%
+	height: auto
+
+button
+	outline: none
+	border: none
+	background-color: transparent
+
+a, a:hover
+	text-decoration: none
+
+.icon
+	vertical-align: middle
+
+.sm-f
+	display: none
+
+.wrap
+	width: 1100px
+	min-height: 100%
+	margin: 0 auto
+	padding: 0 15px
+	position: relative
+	padding-bottom: 290px
+.header
+	position: relative
+	margin-top: 36px
+	display: flex
+	flex-wrap: wrap
+	justify-content: center
+	align-items: center
+	&::before
+		content: ""
+		z-index: -1
+		top: -15px
+		left: -180px
+		position: absolute
+		width: 1364px
+		height: 186px
+		background: url(../img/line.png) no-repeat
+		background-size: contain
+	&-nav ul
+		display: flex
+		li
+			position: relative
+			.header-nav_count
+				position: absolute
+				top: -22px
+				right: 0
+				font-size: 11px
+				font-weight: bold
+				border-radius: 6px
+				padding: 4px
+				background-color: $yellow
+			&:nth-child(2)
+				margin-right: 130px
+			&:nth-child(3)
+				margin-left: 130px
+	&-nav ul li a
+		position: relative
+		text-transform: uppercase
+		font-size: 20px
+		font-weight: bold
+		color: #202020
+		margin: 0 12px
+		padding: 8px 12px
+		white-space: nowrap
+		&::before
+			position: absolute
+			z-index: -1
+			content: ""
+			opacity: 0
+			top: -100%
+			left: 0
+			height: 3px
+			width: 100%
+			background-color: $yellow
+		&:hover::before
+			opacity: 1
+			transition: all 0.2s ease-out
+			top: 100%
+		&::before:not(&:hover)
+			//width: 0px
+			transition: all 0.4s ease-in
+	&-logo
+		position: absolute
+		display: flex
+		justify-items: center
+		//margin: 0 68px
+		top: -16px
+		margin-left: -84px
+		.logo
+			width: 220px
+			height: 65px
+			background: url(../img/logo.png) no-repeat
+		.icon
+			cursor: pointer
+			margin-top: 12px
+			color: $blue
+			font-size: 32px
+			&:hover
+				color: $red
+		.active
+			color: $red
+.dropmenu-top
+	position: fixed
+	display: none
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	flex-direction: column
+	align-items: center
+	padding-top: 40px
+	background-color: #ffffff
+	transition: all 0.3s ease-in
+	// border-radius: 6px
+	// box-shadow: 0px 4px 15px rgba(129,129,129,.16)
+	z-index: 10
+	&_list-top
+		margin-top: 20px
+		flex-direction: column
+		padding: 0 30px 20px 30px
+		border-bottom: 1px solid $blue
+		li
+			position: relative
+			text-align: center
+			margin-bottom: 14px
+			&:last-child
+				margin-bottom: 0
+			.header-nav_count
+				position: absolute
+				top: -18px
+				right: -14px
+				font-size: 14px
+				padding: 4px
+				border-radius: 4px
+				background-color: $yellow
+			a
+				color: #202020
+				font-weight: bold
+				font-size: 16px
+	&_close
+		position: absolute
+		cursor: pointer
+		display: block
+		top: 5px
+		right: -12px
+		height: 42px
+		width: 42px
+		&::before
+			content: ""
+			position: absolute
+			top: 50%
+			height: 1px
+			width: 42px
+			background-color: $blue
+			border-radius: 3px
+			transform: rotate(-45deg)
+		&::after
+			top: 50%
+			content: ""
+			position: absolute
+			height: 1px
+			width: 42px
+			background-color: $blue
+			border-radius: 3px
+			transform: rotate(45deg)
+		&:hover::before
+			transform: rotate(45deg)
+		&:hover::after
+			transform: rotate(-45deg)
+		&:hover::before, &:hover::after
+			background-color: $red
+			transition: transform 0.3s ease
+			
+	&_header
+		position: relative
+		padding: 8px 45px 15px 45px
+		border-bottom: 1px solid rgba(112,112,112,.10)
+		span, a
+			text-transform: uppercase
+			font-size: 30px
+			font-weight: bold
+			color: $text
+		a
+			vertical-align: middle
+			color: $red
+			&:hover
+				text-decoration: underline
+			.icon
+				font-size: 16px
+				color: $red
+				margin-right: 6px
+	&_list
+		display: flex
+		padding: 10px
+		flex-wrap: wrap
+		justify-content: center
+		//flex-direction: flex
+		max-width: 750px
+		li
+			display: flex
+			align-items: center
+			margin: 10px
+			&:hover a 
+				color: $blue
+			&:last-child
+				margin-bottom: 0
+			a.active
+				color: $blue
+			span
+				border-radius: 50%
+				display: block
+				width: 66px
+				height: 66px
+				background-color: #F6F6F6
+				margin-bottom: 12px
+			a
+				display: flex
+				align-items: center
+				flex-direction: column
+				color: $text
+				font-weight: bold
+				font-size: 16px
+			.dropmenu_icon
+				
+
+.search
+	max-width: 600px
+	margin-top: 74px
+	width: 100%
+	&-box
+		position: relative
+		button[type="submit"], input[type="submit"]
+			position: absolute
+			top: 15px
+			right: 12px
+			.icon
+				color: $blue
+				font-size: 28px
+			&:hover .icon
+				color: $red
+	
+	&-text
+		position: absolute
+		top: 50%
+		left: 25px
+		margin-top: -8px
+		pointer-events: none
+		color: #A5A5A5
+		font-size: 15px
+		
+	&-field
+		width: 100%
+		border-radius: 20px
+		padding: 22px 40px 22px 23px
+		border: 2px solid #E2E2E2
+		color: #A5A5A5
+		font-size: 15px
+		box-shadow: 0 6px 12px rgba(126,126,126,.25)
+		&:focus
+			border-color: $blue
+			transition: all 0.3s ease-out
+		&:focus~.search-text
+		//&:not([value=""])~.search-text
+			font-size: 10px
+			margin-top: -22px
+			transition: all 0.3s ease
+		&:not(:focus)
+			transition: all 0.2s ease-in
+	//&-field[value=""]
+
+.mgt35
+	margin-top: 35px
+.main
+	margin-top: 46px
+	display: flex
+	flex-direction: column
+	//align-items: center
+	margin-bottom: 100px
+	&-columns
+		display: flex
+		flex-wrap: wrap
+		justify-content: space-between
+		.main-center
+			width: 50%
+			.main-content
+				color: #858585
+				line-height: 22px
+				a
+					color: $blue
+					text-decoration: underline
+		.main-aside
+			flex-basis: 25%
+	&-speedbar
+		a, span
+			font-size: 14px
+			color: #B5B5B5
+		a:hover, a:hover span
+			color: $red
+		.circl
+			width: 6px
+			height: 6px
+			border: 1px solid $red
+			border-radius: 50%
+			margin: 0 5px
+			display: inline-block
+
+	&-header, .article-header
+		text-align: center
+		margin-top: 42px
+		margin-bottom: 38px
+		flex-direction: column
+		display: flex
+		&:first-child
+			margin-top: 0
+		h1,h2,h3,h4
+			font-size: 28px
+			font-weight: bold
+		&::after
+			content: '\E808'
+			display: inline-block
+			margin-top: 14px
+			font-family: "icons"
+			font-style: normal
+			font-weight: normal
+			color: $red
+			font-size: 12px
+	&-info
+		display: flex
+		justify-content: center
+		position: relative
+		margin-bottom: 50px
+		&::before
+			content: ""
+			position: absolute
+			bottom: 0
+			z-index: -1
+			height: 4px
+			width: 120px
+			margin-bottom: -8px
+			border-radius: 4px
+			background-color: rgba(255,223,65,.6)
+		&::after
+			content: ""
+			position: absolute
+			z-index: -1
+			bottom: -16px
+			width: 0
+			height: 0
+			border-left: 6px solid transparent
+			border-right: 6px solid transparent
+			border-top: 8px solid rgba(255,223,65,.6)
+		&_text
+			padding: 0 40px
+			flex-basis: 50%
+			color: #9B9B9B
+			line-height: 22px
+	&-wrap-item
+		display: flex
+		//flex-wrap: wrap
+		justify-content: center
+		.main-wrap-full
+			flex-basis: 50%
+		.group-item
+			flex-basis: 270px
+			&-left, &-right
+				display: flex
+				font-size: 14px
+				color: #C8C8C8
+				text-transform: lowercase
+				margin-bottom: 16px
+			&-left
+				justify-content: flex-end
+			&-right
+				justify-content: flex-start
+		.line
+			position: relative
+			display: flex
+			width: 6px
+			border-radius: 6px
+			background-color: #F1F1F1
+			margin: 0 30px
+			top: 6px
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				left: -12px
+				border-radius: 4px
+				height: 6px
+				width: 29px
+				background-color: #F1F1F1
+			&::before
+				content: ''
+				position: absolute
+				top: 50%
+				left: -11px
+				margin-top: -13px
+				border-radius: 50%
+				border: 3px solid #F1F1F1
+				background-color: #ffffff
+				width: 22px
+				height: 22px
+			&-left, &-right
+				position: absolute
+				top: -6px
+				font-size: 14px
+				color: #C8C8C8
+				text-transform: lowercase
+			&-left
+				left: 0
+			&-right
+				right: 100%
+
+.navigation
+	display: flex
+	justify-content: center
+	li
+		list-style: none
+		margin-right: 10px
+		margin-bottom: 10px
+		&:last-child
+			margin-right: 0
+		a, span
+			display: flex
+			align-items: center
+			justify-content: center
+			font-weight: 500
+			border-radius: 8px
+			border: 2px solid $blue
+			width: 28px
+			height: 28px
+		a
+			background-color: $blue
+			color: #ffffff
+			&:hover
+				background-color: #ffffff
+				color: $blue
+		span
+			color: $blue
+			cursor: default
+
+.item-player
+	position: relative
+	width: 100%
+	margin-bottom: 20px
+	&:last-child
+		margin-bottom: 0
+	&:hover .mp3Player
+		display: block
+.show-player .player-left_active .item-play-play
+	opacity: 1
+.player-left_active
+	position: absolute
+	top: 0
+	left: 0
+	width: 42px
+	height: 42px
+	display: flex
+	justify-content: center
+	align-items: center
+	.icon-play-btn
+		margin-left: 3px
+	.item-play-play
+		opacity: 0
+		display: flex
+		justify-content: center
+		align-items: center
+		width: 32px
+		height: 32px
+		border-radius: 50%
+		background-color: $red
+		cursor: pointer
+		z-index: 0
+		.icon
+			color: #ffffff
+			font-size: 14px
+		&:not(:hover)
+			transition: all 0.2s ease-out
+.item-player-wrap
+	display: flex
+	align-items: center
+	margin-bottom: 28px
+	position: relative
+	&:hover .item-play-play
+		opacity: 1
+		z-index: 2
+		transition: all 0.15s ease-in
+	&:last-child
+		margin-bottom: 0
+	//width: 100%
+	&_left
+		position: relative
+		overflow: hidden
+		flex-basis: 42px
+		border-radius: 4px
+		margin-right: 11px
+		img
+			width: 42px
+			height: 42px
+			border-radius: 4px
+	&_info
+		flex-basis: 0
+		flex-grow: 1
+		&:hover a .player-icon_top
+			color: $red
+	&_info a
+		display: flex
+		flex-direction: column
+	&_right
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		.wrap_right-btn
+			border-radius: 6px
+			background-color: $yellow
+			color: #ffffff
+			text-transform: lowercase
+			font-size: 14px
+			padding: 4px 12px
+			border: 2px solid $yellow
+			&:hover
+				background-color: #ffffff
+				color: $yellow
+.comment-item
+	margin-bottom: 20px
+	display: flex
+	flex-direction: column
+	&:last-child
+		margin-bottom: 0
+	&_header
+		position: relative
+		margin-bottom: 10px
+		&::before
+			content: ""
+			position: absolute
+			top: 50%
+			margin-top: -3px
+			left: 0
+			width: 7px
+			height: 7px
+			background-color: $red
+			border-radius: 50%
+		span, a
+			font-size: 14px
+			font-weight: 500
+			color: #202020
+			margin-left: 12px
+	&_text
+		background-color: #FFFADF
+		padding: 4px 5px
+		border-radius: 6px
+		color: #8E8E8E
+		font-size: 14px
+
+.main-story
+	margin-top: 52px
+	margin-bottom: 28px
+	h1,h2,h3
+		font-size: 26px
+		font-weight: bold
+		margin-bottom: 20px
+	p
+		color: #858585
+		line-height: 22px
+		margin-bottom: 20px
+		&:last-child
+			margin-bottom: 0
+
+.popup-player-info
+	display: none
+	position: absolute
+	top: -5px
+	left: 30px
+	z-index: 10
+	background-color: #FBFBFB
+	border-left: 1px solid $red
+	border-radius: 8px
+	padding: 4px 8px
+	box-shadow: 0px 3px 6px rgba(0,0,0,.2)
+	&::before
+		content: ""
+		position: absolute
+		top: 17px
+		left: -7px
+		width: 0
+		height: 0
+		border-top: 5px solid transparent
+		border-bottom: 5px solid transparent
+		border-right: 7px solid $red
+	&_header
+		color: #C8C8C8
+		text-transform: lowercase
+		font-size: 12px
+		margin-bottom: 8px
+	&_list
+		margin-bottom: 20px
+		display: flex
+		flex-direction: column
+		li
+			padding: 8px 0
+			border-bottom: 1px solid rgba(46,120,230,.2)
+			font-size: 14px
+			color: #C8C8C8
+			&:last-child
+				padding-bottom: 0
+				border-bottom: 0
+			span
+				color: #A5A5A5
+				font-weight: bold
+				margin-right: 4px
+	&_text
+		font-size: 14px
+		color: #9E9E9E
+		line-height: 18px
+		white-space: pre-line
+
+.cart-wrap
+	display: flex
+	//justify-content: flex-start
+	flex-wrap: wrap
+	justify-content: center
+.cart-item
+	width: 162px
+	margin: 0 14px 20px 14px
+	&_pic
+		width: 162px
+		height: 162px
+		border-radius: 4px
+		position: relative
+		&:hover &-info
+			opacity: 1
+			transition: opacity 0.3s ease-out
+		img
+			border-radius: 4px
+		&-info
+			opacity: 0
+			position: absolute
+			display: flex
+			top: 0
+			align-items: center
+			justify-content: center
+			width: 100%
+			height: 100%
+			background-color: rgba(67,67,67,.8)
+			border-radius: 4px
+			&:not(:hover)
+				transition: opacity 0.2s ease-in
+			.pic-item
+				cursor: default
+				color: #ffffff
+				margin-right: 30px
+				text-align: center
+				margin-top: 58px
+				&:last-child
+					margin-right: 0
+				.icon
+					display: block
+					margin-bottom: 4px
+	&_title
+		margin-top: 6px
+		&:hover .title-top
+			color: $red
+		.title-top, .title-bottom
+			display: block
+			color: #202020
+		.title-top
+			font-weight: bold
+		.title-bottom
+			font-size: 14px
+
+.player-icon_top
+	color: #202020
+	font-weight: 500
+.player-icon_bottom
+	color: #8E8E8E
+.player-right_delete
+	cursor: pointer
+	margin-left: 14px
+	&:hover .icon
+		color: $red
+	.icon
+		font-size: 24px
+		color: $blue
+.player-right_active.active .icon
+	color: $red
+.player-right_active
+	cursor: pointer
+	margin-right: 14px
+	&:hover .icon
+		color: $red
+	&:hover .popup-player-info
+		display: block
+	.icon
+		font-size: 28px
+		color: #DBDBDB
+.player-right_text
+	font-size: 14px
+	color: #8E8E8E
+
+
+.mp3Player
+	position: absolute
+	top: 0
+	left: 0
+	display: none
+
+.player-playing, .player-paused
+	display: block
+
+.player-playing .play-pause-btn .icon-mp3player:before
+	content: '\e809'
+
+.play-pause-btn
+	width: 42px
+	height: 42px
+	display: flex
+	justify-content: center
+	align-items: center
+	background-color: rgba(58,58,58,.70)
+	overflow: hidden
+	border-radius: 4px
+.play-pause-btn .icon-mp3player:before
+	font-family: "icons"
+	font-size: 22px
+	content: '\e80c'
+	display: block
+	color: $yellow
+
+.article
+	display: flex
+	flex-direction: column
+	// .item-player
+	// 	margin-bottom: 0
+	&-header
+		margin-top: 14px !important
+		font-size: 28px
+	&-top-alb
+		margin-bottom: 70px
+	&-top
+		display: flex
+		//flex-wrap: wrap
+		//justify-content: space-between
+		.article-left
+			position: relative
+			flex-basis: 175px
+			margin-right: 28px
+			.article-social
+				margin-top: 80px
+				display: flex
+				flex-direction: column
+				align-items: center
+				&-share
+					margin-top: 22px
+		.article-right
+			flex-basis: 0
+			flex-grow: 1
+	&-sect
+		margin: 15px 0
+		&_header
+			margin-bottom: 20px
+			display: flex
+			justify-content: space-between
+			a
+				background-color: #fff9db
+				color: #646464
+				padding: 5px 12px
+				border-radius: 10px
+				&:hover
+					color: #fff
+					background-color: $red
+			h2,h3
+				font-weight: bold
+				font-size: 24px
+			h4,h5,h6
+				font-weight: bold
+				font-size: 22px
+	.fulltext-t
+		width: 100%
+	&-fulltext
+		background-color: #FFFBE9
+		padding: 16px 18px
+		border-radius: 10px
+		color: #7E7878
+		line-height: 22px
+		width: 70%
+		white-space: pre-line
+.article-image
+	border-radius: 50%
+	width: 175px
+	height: 175px
+.item-t
+	left: 30px !important
+.article-info-item, .article-info-cat
+	position: absolute
+	top: 120px
+	left: -20px
+	background-color: #F8F0C7
+	border-radius: 50%
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	width: 118px
+	height: 118px
+	span:first-child
+		font-size: 24px
+		font-weight: bold
+		color: #363636
+	span:last-child
+		font-size: 12px
+		color: #A49D78
+.article-info-cat
+	width: 108px
+	height: 108px
+	left: auto
+	right: -10px
+.one
+	width: 68px
+	height: 68px
+	top: 64px
+	background-color: #ffffff
+	
+.article-download
+	position: absolute
+	top: 140px
+	right: 0
+	border-radius: 50%
+	width: 64px
+	height: 64px
+	background-color: #ffffff
+	border: 4px solid $blue
+	display: flex
+	justify-content: center
+	align-items: center
+	z-index: 2
+	&:hover
+		background-color: $red
+		border-color: $red
+	&:hover .icon
+		color: #ffffff
+	&::after
+		content: ""
+		position: absolute
+		top: -10px
+		left: -10px
+		width: 68px
+		height: 68px
+		border-radius: 50%
+		border: 6px solid #ffffff
+		z-index: 0
+	.icon
+		color: $red
+		font-size: 42px
+.article-info
+	color: #646464
+	font-size: 15px
+	line-height: 22px
+	margin-bottom: 18px
+	border-radius: 12px
+	background-color: #FFF9DB
+	padding: 14px 12px
+.article-tab-info
+	display: flex
+	margin-bottom: 16px
+	span
+		cursor: default
+		background-color: #FFF9DB
+		border-radius: 6px
+		padding: 6px 13px
+		font-size: 14px
+		color: #8A877B
+		margin-right: 14px
+		box-shadow: 0px 3px 6px rgba(0,0,0,.10)
+		&:last-child
+			margin-right: 0
+.article-social
+	display: flex
+	&-like, &-share
+		position: relative
+	&-like
+		margin-right: 14px
+		&:hover .social-like_count
+			opacity: 1
+			bottom: -20px
+			transition: all 0.3s ease-out
+		&:not(:hover) .social-like_count
+			opacity: 0
+			transition: all 0.2s ease-in
+		.socila-like_active
+			cursor: pointer
+		.social-like_count
+			opacity: 0
+			position: absolute
+			left: 2px
+			bottom: 4px
+			color: #96B6E4
+			background-color: #D9E9FF
+			border-radius: 6px
+			font-size: 12px
+			padding: 2px 4px
+			z-index: -1
+	&-share
+		cursor: pointer
+		&:hover .social-share_active
+			opacity: 1
+			transition: all 0.3s ease-out
+		.social-share_active
+			opacity: 0
+			position: absolute
+			background-color: #FFFBE9
+			border-radius: 10px
+			box-shadow: 0px 3px 6px rgba(0,0,0,.10)
+			padding: 10px 14px
+			width: 100%
+			&::before
+				content: ""
+				position: absolute
+				top: 0
+				left: 50%
+				margin-left: -4px
+				width: 0
+				height: 0
+				border-left: 4px solid transparent
+				border-right: 4px solid transparent
+				border-bottom: 8px solid #E8E3CB
+	.social-text
+		color: #444444
+		font-size: 15px
+		font-weight: 500
+		.icon
+			margin-right: 8px
+		.icon-like
+			color: $red
+			font-size: 22px
+		.icon-share
+			color: $blue
+			font-size: 22px
+
+.footer
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	align-items: center
+	left: 0
+	bottom: 0
+	position: absolute
+	width: 100%
+	height: 100px
+	padding-bottom: 180px
+	&::before
+		content: ""
+		position: absolute
+		top: -160px
+		left: 0
+		background: url(../img/line.png) no-repeat
+		background-size: contain
+		width: 100%
+		height: 186px
+		transform: rotate(180deg)
+		z-index: -1
+	&-left
+		margin-left: 30px
+		display: flex
+		flex-direction: column
+		justify-content: center
+		&_logo
+			display: block
+			width: 230px
+			height: 65px
+			background: url(../img/logo.png) no-repeat
+			margin-bottom: 6px
+		&_text
+			font-size: 12px
+			color: #ACACAC
+	&-center
+		//display: flex
+		justify-content: flex-start
+		ul
+			display: flex
+			li
+				margin-right: 22px
+				&:last-child
+					margin-right: 0
+				a
+					color: #2A2A2A
+					font-size: 14px
+					&:hover
+						text-decoration: underline
+	&-right
+		position: relative
+		justify-content: flex-end
+		&_top
+			position: absolute
+			top: -50px
+			right: -80px
+			cursor: pointer
+			&:hover
+				transition: all 0.3s ease-out
+				top: -60px
+			&:not(:hover)
+				transition: all 0.2s ease-in
+			.footer_top
+				width: 54px
+				height: 54px
+				border-radius: 50%
+				display: flex
+				justify-content: center
+				align-items: center
+				background-color: $red
+				z-index: 11
+				.icon
+					font-size: 30px
+					color: #ffffff
+		ul
+			display: flex
+			li
+				margin-right: 14px
+				&:last-child
+					margin-right: 0
+				a
+					display: flex
+					justify-content: center
+					align-items: center
+					width: 42px
+					height: 42px
+					background-color: #ffffff
+					border-radius: 50%
+					box-shadow: 0 3px 6px rgba(0,0,0,.20)
+					&:hover
+						box-shadow: 0 3px 6px rgba(0,0,0,.35)
+					.icon
+						font-size: 16px
+					.icon-social-vk
+						margin-right: 14px
+						color: #2E78E6
+					.icon-social-google
+						color: #DE171D
+						margin-right: 4px
+					.icon-social-telegram
+						color: #3E8CFF
+						margin-right: 4px
+					.icon-social-youtube
+						color: #EF3D3D
+						margin-right: 6px
+
+.js-item-stopped .player-control .icon:before
+	content: '\e809' !important
+
+.mp3-loud
+	position: fixed
+	width: 100%
+	max-width: 1070px
+	bottom: 0
+	z-index: 100
+.mp3-detected .controls
+	pointer-events: none
+	.icon
+		cursor: default !important
+		color: #C9C9C9 !important
+	.mp3-player-volume
+		display: none
+.mp3-player
+	height: 62px
+	display: flex
+	flex-direction: column
+	background-color: #F9F9F9
+	box-shadow: 0 0 12px rgba(0,0,0,.15)
+	&-volume-adjust
+		width: 136px
+		height: 14px
+		> div
+			border-radius: 6px
+			border: 1px solid #808080
+			height: inherit
+			overflow: hidden
+			> div
+				background-color: $red
+				height: 12px !important
+				border-radius: 6px
+	.progress
+		margin-top: -5px
+		.mp3-player-bar
+			position: relative
+			height: 6px
+			background-color: #E4E9EF
+			border-radius: 6px
+			cursor: pointer
+			&-loaded, &-played
+				height: inherit
+				position: absolute
+			&-loaded
+				background-color: #DBDFE5
+			&-played
+				background-color: $red
+				border-radius: 6px
+		.text 
+			position: relative
+			.mp3-player-current, .mp3-player-duration
+				position: absolute
+				top: -30px
+				font-size: 14px
+				background-color: rgba(255,255,255,.80)
+				padding: 3px
+				border-radius: 3px
+			.mp3-player-current
+				left: 0
+			.mp3-player-duration
+				right: 0
+
+.mp3-player-muted .controls .mp3-player-volume-button .icon::before
+	content: '\e821'
+
+.controls
+	display: flex
+	flex-wrap: wrap
+	height: 62px
+	align-items: center
+	padding: 0 58px
+	.prev
+		order: 1
+		margin-right: 24px
+	.mp3-player-playpause
+		order: 2
+	.next
+		order: 3
+		margin-left: 12px
+	.replay, .suffle
+		cursor: pointer
+		margin: 0 14px
+		.icon 
+			color: #808080
+	.replay
+		order: 4
+		margin-left: 48px
+		.icon
+			font-size: 24px
+	.suffle
+		order: 5
+		.icon
+			font-size: 24px
+	.desc
+		order: 6
+		flex-grow: 1
+		margin-left: 34px
+		&-img
+			position: absolute
+			img
+				width: 42px
+				height: 42px
+				border-radius: 50%
+				box-shadow: 0px 3px 3px rgba(0,0,0,.25)
+		&-text
+			padding-left: 58px
+			.artist, .title
+				font-size: 14px
+				cursor: default
+			.title
+				color: #7193C4
+			.artist
+				font-weight: 500
+				color: #7193C4
+				margin-bottom: 4px
+	.prev .icon:hover, .next .icon:hover, .mp3-player-playpause .icon:hover, .replay .icon:hover, .suffle .icon:hover,
+	.replay-active .icon
+		color: #3D3D3D
+	.mp3-player-volume
+		order: 7
+		flex-wrap: wrap
+		display: flex
+		align-items: center
+		&-button
+			margin-right: 12px
+			.icon
+				font-size: 30px
+				color: #808080
+	.mp3-player-playpause
+	.prev, .next
+		cursor: pointer
+		display: inline-block
+		.icon
+			color: #808080
+	.mp3-player-playpause
+		
+		.icon
+			color: #808080
+			font-size: 30px
+
+.error
+	position: fixed
+	bottom: 15px
+	right: 15px
+	border-radius: 10px
+	background-color: $red
+	color: #fff
+	padding: 10px 14px
+	z-index: 10000
+
+.player-message
+	position: fixed
+	bottom: 80px
+	right: 20px
+	padding: 14px
+	border-radius: 10px
+	background-color: $yellow
+	color: $text
+	z-index: 9999
+	font-size: 13px
+
+@import "_media"

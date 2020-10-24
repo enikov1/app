@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="26" height="29" viewBox="0 0 26 29">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: gray;
+      }
+    </style>
+  </defs>
+  <g id="stop" transform="translate(-290 -47)">
+    <rect id="Прямоугольник_30" data-name="Прямоугольник 30" class="cls-1" width="9" height="29" rx="2" transform="translate(290 47)"/>
+    <rect id="Прямоугольник_31" data-name="Прямоугольник 31" class="cls-1" width="9" height="29" rx="2" transform="translate(307 47)"/>
+  </g>
+</svg>

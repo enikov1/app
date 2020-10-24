@@ -1,0 +1,219 @@
+@import "vars"
+	
+@media (max-width:950px)
+	.popup-player-info, .player-right_active
+		display: none
+
+@media (min-width:1280px)
+
+@media (max-width:768px)
+	.dropmenu-top
+		overflow: auto
+	.main-story p
+		line-height: 26px
+
+/* xs (<=543px) */
+@media (max-width:575px)
+	.wrap
+		max-width: 100%
+	.main
+		margin-bottom: 200px
+	.sm-b
+		display: none
+	.sm-f
+		display: block
+	
+	.header
+		margin-top: 0
+		overflow: hidden
+		flex-direction: column
+		flex-wrap: nowrap
+		&::before
+			width: 414px
+			height: 65px
+			left: -15px
+			top: 32px
+			background: url(../img/line-smart.png) no-repeat
+		&-logo
+			position: relative
+			//text-align: center
+			//width: 100%
+			margin-left: 0
+			align-items: center
+			.logo
+				margin-top: 23px
+			.icon
+				position: absolute
+				//top: 12px
+				left: 100%
+
+	.search
+		max-width: 100%
+	.main-columns
+		flex-direction: column
+		.main-center
+			width: 100%
+		.main-aside
+			display: none
+			flex-basis: 100%
+
+	.main-wrap-item
+		flex-direction: column
+		.line
+			display: none
+		.group-item
+			flex-basis: 0
+			&:first-child
+				margin-bottom: 32px
+			&-left, &-right
+				justify-content: center
+
+	.cart-wrap
+		flex-wrap: wrap
+		justify-content: space-between
+	.cart-item
+		//width: 40%
+		width: 160px
+		margin: 0 0 10px 0
+		&_pic
+			width: 160px
+			height: 160px
+
+	.main-speedbar
+		display: inline-block
+		.circl
+			display: inline-block
+
+	.article-top
+		flex-direction: column
+		.article-left
+			margin-right: 0
+			flex-basis: 0
+			.article-image
+				width: 100%
+				height: 100%
+		.article-right
+			margin-top: 30px
+
+	.article-info
+		font-size: 16px
+		line-height: 24px
+
+	.article-social
+		justify-content: center
+		margin: 20px 0
+
+	.article-fulltext
+		width: 100%
+		line-height: 26px
+
+	.article-info-item
+		bottom: 4px
+		left: 20px
+		top: auto
+
+	.article-download
+		top: auto
+		bottom: 4px
+		right: 20px
+
+	.article-tab-info span
+		font-size: 16px
+
+	.article-social .social-text
+		font-size: 18px
+
+	.footer
+		//margin-bottom: 190px
+		padding: 35px 0
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		flex-wrap: nowrap
+		height: 415px
+		&-left
+			margin-left: 0
+			margin-bottom: 20px
+		&-center
+			margin-bottom: 20px
+			ul
+				flex-direction: column
+				align-items: center
+				li
+					margin-right: 0
+					margin-bottom: 18px
+					&:last-child
+						margin-bottom: 0
+
+	.mp3-loud
+		width: 100%
+		left: 0
+		bottom: -3px
+	.controls
+		padding: 10px
+		justify-content: space-between
+		.replay
+			margin-left: 20px
+		.suffle
+			margin: 0 10px
+		.desc
+			display: none
+		.mp3-player-volume
+			padding-right: 20px
+	.mp3-player-volume-adjust
+		width: 90px
+
+	.dropmenu-top_header a, .dropmenu-top_header span
+		font-size: 24px
+	.dropmenu-top_close
+		width: 32px
+		height: 32px
+		&::before, &::after
+			width: 32px
+	
+	.main-info_text
+		padding: 0
+		flex-basis: 100%
+		width: 100%
+		margin-bottom: 20px
+	
+	.article-col
+		//flex-direction: column
+		justify-content: space-between
+		.article-info-item
+			bottom: 135px
+		.article-social
+			margin-top: 55px !important
+
+	.article-info-cat
+		width: 128px
+		height: 128px
+		span:last-child
+			font-size: 15px
+
+	.one
+		right: 20px
+		left: auto
+
+	
+
+@media (max-width:360px)
+	.cart-item
+		margin: 0 0 10px 0
+		width: 140px
+	.cart-item_pic
+		width: 140px
+		height: 140px
+	.footer-right_top
+		right: -50px
+		.footer_top
+			width: 38px
+			height: 38px
+			.icon
+				font-size: 22px
+
+@media (max-width:320px)
+	.search-text
+		font-size: 14px
+		left: 15px
+	
